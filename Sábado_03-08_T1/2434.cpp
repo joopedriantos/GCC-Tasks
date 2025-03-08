@@ -18,6 +18,4 @@ int main() {
     }
 
     cout << menorSaldo << endl;
-    
-    return 0;
 }
