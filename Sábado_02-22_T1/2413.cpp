@@ -24,4 +24,5 @@ int main() {
     }
 
     cout << primeiroLink << endl;
+    std::cout << "Programa rodando corretamente!\n";
 }
