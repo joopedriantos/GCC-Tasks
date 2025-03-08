@@ -1,29 +1,39 @@
 // Caio Costa Cunha . João Pedro Santos
 
 #include <iostream>
+#include <vector>
 #include <algorithm>
 
 using namespace std;
 
-int maior_poligono(int N, int palitos[]) {
-    sort(palitos, palitos + N);
-    
-    for (int i = N - 1; i >= 2; i--) {
-        if (palitos[i] < palitos[i - 1] + palitos[i - 2]) {
-            return i + 1;
-        }
-    }
-    return 0;
-}
-
 int main() {
     int N;
     cin >> N;
-    
-    int palitos[N];
-    for (int i = 0; i < N; i++) {
+
+    vector<int> palitos(N);
+    for (int i = 0; i < N; ++i) {
         cin >> palitos[i];
     }
-    
-    cout << maior_poligono(N, palitos) << endl;
+
+
+    sort(palitos.begin(), palitos.end());
+
+    long long soma = 0;
+    int maiorPoligono = 0;
+
+    for (int i = 0; i < N; ++i) {
+        if (soma > palitos[i]) {
+            maiorPoligono = i + 1;
+        }
+        soma += palitos[i];
+    }
+
+
+    if (soma - palitos[N-1] > palitos[N-1]) {
+        maiorPoligono = N;
+    }
+
+    cout << maiorPoligono << endl;
+
+    return 0;
 }
