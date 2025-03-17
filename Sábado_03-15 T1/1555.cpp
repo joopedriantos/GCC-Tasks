@@ -1,4 +1,5 @@
-// Caio Costa Cunha . João Pedro Santos
+
+//  João Pedro Santos
 #include <iostream>
 #include <cmath>
 
